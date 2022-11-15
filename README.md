@@ -116,7 +116,7 @@ git rebase rama-principal
 ```
 
 ## FUSIONES
-Para fusionar debemos situarnos en la rama que recopilara la data de las otras ramas.<br>
+Para fusionar debemos situarnos en la rama que recopilara la data de las otras ramas, Esta rama debe estar en el area de commit.<br>
 Tambien hay que tener en cuenta que pueden surgir conflictos debido al editar un mismo archivo y los mismos fragmentos de codigo.
 ### FAST FORWARD: LA fusion se hace sin conflictos
 ### MANUAL MERGE: Fusion manual debido a edicion del mismo codigo
@@ -128,3 +128,17 @@ git checkout rama_principal
 git merge rama_secundaria
 
 ```
+En nuestro merge ocurrio un MANUAL MERGE debido a que el archivo README de la rama principal fue editado y el README de la rama habia echo una copia antes que esta edicion fuera creada.<br>
+Ante esto tenemos 3 opciones y 1 opcion visuable.
+* Accept current Change: Aceptamos los cambios de la rama_principal
+* Accept Incomming Change: Aceptamos los cambios de la rama_secundaria
+* Accept Both Change: Aceptamos ambos cambios
+* Compare Change: Opcion visuable para comparar los cambios.
+<hr>
+
+![alt](img/merge2.jpg)
+<hr>
+
+![alt](/img/merge.jpg)
+
+
