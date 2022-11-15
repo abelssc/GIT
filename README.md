@@ -77,3 +77,11 @@ Si queremos obtener un proyecto ya aloja en git podemos usar `git clone`.
 ```
 git clone https://github.com/user/proyecto.git
 ```
+
+##MARKDOWN FOR JS
+```js
+const $d=document.querySelector("document");
+$d.addEventListenner("click",(e)=>{
+    console.log(e.target);
+})
+```
