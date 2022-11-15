@@ -26,7 +26,7 @@ git help config
 ```
 
 ## FLUJO
-```properties
+```bash
 #PARA INICIAR UN REPOSITORIO WORKING DIRECTORY
 git init
 
