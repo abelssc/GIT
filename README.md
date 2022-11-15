@@ -35,8 +35,10 @@ git add archivo/directorio
 git add .
 
 #CREAR UN ID/ TENER UN HISTORIAL DE LOS CAMBIOS
-git commit 
+git commit
 git commit -m
+#PARA SALIR DEL EDITOR DE COMMIT ESCRIBIR
+:wq 
 
 #OPCIONALMENTE PODEMOS SELECCIONAR LA RAMA DONDE GUARDAR LOS CAMBIOS
 git branch -M main
@@ -54,6 +56,17 @@ git push
 
 #PARA DESCARGAR CAMBIOS
 git pull 
+```
+## FLUJO LUEGO DE HACER EL PRIMER PUSH
+```properties
+#vemos la fase del flujo
+git status
+#pasamos a staged
+git add .
+#pasamos al commit
+git commit -m "mensaje commit"
+#pasamos al remote
+git push
 ```
 
 ## GIT IGNORE
@@ -113,6 +126,12 @@ git branch --merged
 git checkout rama-secundaria
 git rebase rama-principal
 
+#guardar en el remoto una rama
+git push -u origin nombre_rama
+git push --set-upstream origin nombre_rama
+
+#eliminar rama del remote
+git push origin --delete nombre_rama
 ```
 
 ## FUSIONES
@@ -126,7 +145,8 @@ Tambien hay que tener en cuenta que pueden surgir conflictos debido al editar un
 git checkout rama_principal
 #Hacemos la fusion
 git merge rama_secundaria
-
+#Para salir del editor de codigo escribir :wq, este editor crea un commit al hacer el merge
+:wq
 ```
 En nuestro merge ocurrio un MANUAL MERGE debido a que el archivo README de la rama principal fue editado y el README de la rama habia echo una copia antes que esta edicion fuera creada.<br>
 Ante esto tenemos 3 opciones y 1 opcion visuable.
@@ -142,3 +162,27 @@ Ante esto tenemos 3 opciones y 1 opcion visuable.
 ![alt](/img/merge.jpg)
 
 
+## CAMBIOS EN EL COMMIT
+Puedes agregar modificaciones al último cambio
+
+```properties
+# Guardar edicion en el último commit
+git commit --amend --no-edit
+
+# editando el mensaje del último commit
+git commit --amend -m "nuevo mensaje para el último commit"
+
+# eliminar el último commit
+git reset --hard HEAD~1
+```
+
+## VIAJAR ENTRE COMMITS
+Podemos desplazarnos en el historial del repositorio hacia atrás o adelante en cambios o ramas , sin afectar el repositorio como tal.
+Previamente debemos estar en fase commit
+```properties
+# cambiar a una rama
+git checkout nombre-rama
+
+# cambiar a un commit en particular
+git checkout id-commit
+```
