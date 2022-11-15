@@ -45,6 +45,7 @@ git branch -M main
 git remote add origin http://github.com/user/repositorio.git
 
 #PARA SUBIR LOS CAMBIOS AL REPOSITORIO DE GITHUB X PRIMERA VEZ
+#-u = --set-upstream que significa, crea la rama en el remoto....
 git push -u origin master
 
 #PARA NUEVAS ACTUALIZACIONES
@@ -78,10 +79,52 @@ Si queremos obtener un proyecto ya aloja en git podemos usar `git clone`.
 git clone https://github.com/user/proyecto.git
 ```
 
-##MARKDOWN FOR JS
-```js
-const $d=document.querySelector("document");
-$d.addEventListenner("click",(e)=>{
-    console.log(e.target);
-})
+## BRANCHES - NAVEGANDO POR RAMAS
+Cuando creas una rama(rama2). rama2 tomara toda la informacion de la rama1 que la esta creando.
+```properties
+#crear rama
+git branch nombre_rama
+
+#navegar por ramas
+git checkout nombre_rama
+
+#crear rama y navegar por ella
+git -b checkout nombre_rama
+
+#eliminar rama
+git branch -d nombre_rama
+
+#eliminar ramas remotas
+git push origin --delete nombre_rama
+
+#eliminar rama (forzado)
+git branch -D nombre_rama
+
+#listar las ramas del repositorio
+git branch
+
+# lista ramas no fusionadas a la rama actual
+git branch --no-merged
+
+# lista ramas fusionadas a la rama actual
+git branch --merged
+
+# rebasar ramas
+git checkout rama-secundaria
+git rebase rama-principal
+
+```
+
+## FUSIONES
+Para fusionar debemos situarnos en la rama que recopilara la data de las otras ramas.<br>
+Tambien hay que tener en cuenta que pueden surgir conflictos debido al editar un mismo archivo y los mismos fragmentos de codigo.
+### FAST FORWARD: LA fusion se hace sin conflictos
+### MANUAL MERGE: Fusion manual debido a edicion del mismo codigo
+
+```properties
+#Nos dirigimos a la rama que recopilara la informacion
+git checkout rama_principal
+#Hacemos la fusion
+git merge rama_secundaria
+
 ```
