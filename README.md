@@ -45,6 +45,7 @@ git branch -M main
 git remote add origin http://github.com/user/repositorio.git
 
 #PARA SUBIR LOS CAMBIOS AL REPOSITORIO DE GITHUB X PRIMERA VEZ
+#-u = --set-upstream que significa, crea la rama en el remoto....
 git push -u origin master
 
 #PARA NUEVAS ACTUALIZACIONES
@@ -78,10 +79,37 @@ Si queremos obtener un proyecto ya aloja en git podemos usar `git clone`.
 git clone https://github.com/user/proyecto.git
 ```
 
-##MARKDOWN FOR JS
-```js
-const $d=document.querySelector("document");
-$d.addEventListenner("click",(e)=>{
-    console.log(e.target);
-})
+## BRANCHES - NAVEGANDO POR RAMAS
+```properties
+#crear rama
+git branch nombre_rama
+
+#navegar por ramas
+git checkout nombre_rama
+
+#crear rama y navegar por ella
+git -b checkout nombre_rama
+
+#eliminar rama
+git branch -d nombre_rama
+
+#eliminar ramas remotas
+git push origin --delete nombre_rama
+
+#eliminar rama (forzado)
+git branch -D nombre_rama
+
+#listar las ramas del repositorio
+git branch
+
+# lista ramas no fusionadas a la rama actual
+git branch --no-merged
+
+# lista ramas fusionadas a la rama actual
+git branch --merged
+
+# rebasar ramas
+git checkout rama-secundaria
+git rebase rama-principal
+
 ```
