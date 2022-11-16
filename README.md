@@ -271,4 +271,3 @@ git remote remove nombre-orígen
 git checkout --track -b rama-remota origin/rama-remota
 
 ```
-
