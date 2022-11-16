@@ -252,22 +252,23 @@ git reset --hard id-commit
 ## REMOTOS
 
 ```properties
-#nos muestra el listado de archivos nuevos (untracked), borrados o editados
-git status
+# muestra los orígenes remotos del repositorio
+git remote
 
-# borra HEAD
-git reset --soft
+# muestra los orígenes remotos con detalle
+git remote -v
 
-# borra HEAD y Staging
-git reset --mixed
+# agregar un orígen remoto
+git remote add nombre-orígen https://github.com/usuario/repositorio.git
 
-# borra todo: HEAD, Staging y Working Directory
-git reset --hard
+# renombrar un orígen remoto
+git remote rename nombre-viejo nombre-nuevo
 
-# deshace todos los cambios después del commit indicado, preservando los cambios localmente
-git reset id-commit
+# eliminar un orígen remoto
+git remote remove nombre-orígen
 
-# desecha todo el historial y regresa al commit especificado
-git reset --hard id-commit
+# descargar una rama remota a local diferente a la principal
+git checkout --track -b rama-remota origin/rama-remota
 
 ```
+
