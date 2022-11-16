@@ -303,5 +303,45 @@ git push --tags
 ```
 
 ## GITHUB PAGES
-<div style="text-align:center"><a style="display:inline-block;border:1px solid #ccc;padding:7px 14px;border-radius:5px;color:green;font-weight:bold" href="https://abelssc.github.io/GIT/" target="_blank">GITHUB PAGE</a><div>
+
+Mediante codigo git tambien podemos subir nuestra pagina a github page.
+* URL del repositorio: https://github.com/usuario/repositorio
+* URL del sitio: https://usuario.github.io/repositorio
+
+<div style="text-align:center"><a style="display:inline-block;border:1px solid #ccc;padding:7px 14px;border-radius:5px;color:green;font-weight:bold" href="https://abelssc.github.io/GIT/" target="_blank">GITHUB PAGE</a></div>
+
+
+```properties
+#Creamos la rama gh-pages y nos ubicamos en ella
+git branch gh-pages
+git checkout gh-pages
+
+#se la enviamos al remoto
+git remote add origin https://github.com/usuario/repositorio.git
+git push origin gh-pages
+
+# para descargar los cambios del repositorio remoto al local
+git pull origin gh-pages
+
+```
+
+## PULL REQUEST
+Son peticiones a repositorios externos, donde pediremos permisos para editar su contenido y enviarle la peticion de actualizacion
+_ESTE TEMA AUN ESTA EN PROCESO DE APRENDIZAJE_
+```properties
+# forkear repositorio
+git clone https://github.com/usuario/repositorio.git
+git remote -v
+git remote rename origin fork
+git remote add origin https://github.com/usuario/repositorio.git
+git checkout -b rama-nueva
+git push fork rama-nueva
+# solicitar el pull request
+# aceptar el pull request
+git checkout main
+git pull origin main
+git push fork main
+git branch -d rama-nueva
+git push fork --delete rama-nueva
+```
 
