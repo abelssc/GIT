@@ -276,16 +276,20 @@ git checkout --track -b rama-remota origin/rama-remota
 # listar etiquetas
 git tag
 
-# crea una etiqueta
+# crea una etiqueta, esta etiqueta se agrega automaticamente al ultimo commit
 git tag numero-versión
 
 # eliminar una etiqueta
 git tag -d numero-versión
 
-# mostrar información de una etiqueta
+# mostrar información de una etiqueta y todos los commits dentro
 git show numero-versión
 
-# sincronizando la etiqueta del repositorio local al remoto
+#Subiendo etiqueta al repositorio remoto,considerando que no hay mas cambios
+git tag v1.0.0
+git push origin numero-version
+
+# sincronizando la etiqueta del repositorio local al remoto, si hay mas cambios
 git add .
 git  tag v1.0.0
 git commit -m "v1.0.0"
@@ -297,3 +301,4 @@ git tag -a "v1.0.0" -m "Mensaje de la etiqueta"
 git push --tags
 
 ```
+
